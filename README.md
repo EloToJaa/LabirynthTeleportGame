@@ -1,2 +1,4 @@
 # LabirynthTeleportGame2
- An amazing 3D game made with Unity
+
+## About
+An amazing 3D game made with Unity
