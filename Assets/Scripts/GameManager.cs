@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int timeToEnd;
 
+    public bool gamePaused { get; private set; }
+
     private void Awake()
     {
         if (instance == null)
@@ -28,5 +30,39 @@ public class GameManager : MonoBehaviour
     {
         timeToEnd--;
         Debug.Log($"Time: {timeToEnd} s");
+    }
+
+    public void PauseGame()
+    {
+        Debug.Log("Game Paused");
+        Time.timeScale = 0;
+        gamePaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        Debug.Log("Game Resumed");
+        Time.timeScale = 1;
+        gamePaused = false;
+    }
+
+    private void PauseCheck()
+    {
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            if(gamePaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
+        }
+    }
+
+    private void Update()
+    {
+        PauseCheck();
     }
 }
