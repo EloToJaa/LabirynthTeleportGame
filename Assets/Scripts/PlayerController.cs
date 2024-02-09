@@ -3,12 +3,29 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance { get; private set; }
+
+    public float speedMultiplier { get; private set; } = 1f;
+
     [SerializeField]
     private float speed = 12f;
     private CharacterController controller;
 
     public Transform groundCheck;
     public LayerMask groundMask;
+
+    public void SetSpeedMultiplier(float speedMultiplier)
+    {
+        this.speedMultiplier = speedMultiplier;
+    }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     private void Start()
     {
@@ -49,6 +66,8 @@ public class PlayerController : MonoBehaviour
                     speed = 20f;
                     break;
             }
+
+            speed *= speedMultiplier;
         }
     }
 
