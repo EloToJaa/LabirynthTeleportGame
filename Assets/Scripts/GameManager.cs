@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public void AddPoints(int pointsToAdd)
     {
         points += pointsToAdd;
+        Debug.Log($"Points: {points}");
     }
 
     public void AddTime(int timeToAdd)
