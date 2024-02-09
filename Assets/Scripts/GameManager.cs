@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public void AddKey(KeyColor keyColor)
     {
         keys[(int)keyColor]++;
+        Debug.Log($"Red: {keys[0]}, Green: {keys[1]}, Gold: {keys[2]}");
     }
 
     public void AddPoints(int pointsToAdd)
