@@ -6,12 +6,19 @@ public class GameManager : MonoBehaviour
 
     public int points { get; private set; }
 
+    public int[] keys { get; private set; } = new int[3];
+
     [SerializeField]
     private int timeToEnd;
 
     public bool gamePaused { get; private set; }
     public bool gameEnded { get; private set; }
     public bool gameWon { get; private set; }
+
+    public void AddKey(KeyColor keyColor)
+    {
+        keys[(int)keyColor]++;
+    }
 
     public void AddPoints(int pointsToAdd)
     {
