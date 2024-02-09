@@ -4,12 +4,30 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
 
+    public int points { get; private set; }
+
     [SerializeField]
     private int timeToEnd;
 
     public bool gamePaused { get; private set; }
     public bool gameEnded { get; private set; }
     public bool gameWon { get; private set; }
+
+    public void AddPoints(int pointsToAdd)
+    {
+        points += pointsToAdd;
+    }
+
+    public void AddTime(int timeToAdd)
+    {
+        timeToEnd += timeToAdd;
+    }
+
+    public void FreezeTime(int freezeFor)
+    {
+        CancelInvoke(nameof(Stopper));
+        InvokeRepeating(nameof(Stopper), freezeFor, 1);
+    }
 
     private void Awake()
     {
