@@ -6,13 +6,6 @@ public class SpeedMultiplier : Pickup
     {
         base.Picked();
         PlayerController.instance.SetSpeedMultiplier(speedMultiplier);
-
-        Invoke(nameof(CancelMultiplier), 5f);
-    }
-
-    public void CancelMultiplier()
-    {
-        PlayerController.instance.SetSpeedMultiplier(1f);
     }
 
     private void Update()

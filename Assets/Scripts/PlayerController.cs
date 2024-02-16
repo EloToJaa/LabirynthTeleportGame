@@ -17,6 +17,14 @@ public class PlayerController : MonoBehaviour
     public void SetSpeedMultiplier(float speedMultiplier)
     {
         this.speedMultiplier = speedMultiplier;
+
+        CancelInvoke(nameof(CancelMultiplier));
+        Invoke(nameof(CancelMultiplier), 5f);
+    }
+
+    private void CancelMultiplier()
+    {
+        SetSpeedMultiplier(1f);
     }
 
     private void Awake()
