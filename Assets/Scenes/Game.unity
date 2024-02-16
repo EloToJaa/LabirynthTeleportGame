@@ -179,11 +179,19 @@ PrefabInstance:
     - target: {fileID: 315837268253166255, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 928749181}
+      objectReference: {fileID: 0}
     - target: {fileID: 315837268253166255, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
       propertyPath: receiver
       value: 
-      objectReference: {fileID: 1778617570}
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876987075878699104, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
+      propertyPath: otherPortal
+      value: 
+      objectReference: {fileID: 1778617571}
+    - target: {fileID: 1876987075878699104, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
+      propertyPath: portalCollider
+      value: 
+      objectReference: {fileID: 74179417}
     - target: {fileID: 2637136622062644533, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -238,6 +246,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4776851077977725491, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
   m_PrefabInstance: {fileID: 74179416}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &74179418 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1876987075878699104, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
+  m_PrefabInstance: {fileID: 74179416}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a6ab0c5cf98e5848beb39ea61abd0f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &275421835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,11 +1329,19 @@ PrefabInstance:
     - target: {fileID: 315837268253166255, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 928749181}
+      objectReference: {fileID: 0}
     - target: {fileID: 315837268253166255, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
       propertyPath: receiver
       value: 
-      objectReference: {fileID: 74179417}
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876987075878699104, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
+      propertyPath: otherPortal
+      value: 
+      objectReference: {fileID: 74179418}
+    - target: {fileID: 1876987075878699104, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
+      propertyPath: portalCollider
+      value: 
+      objectReference: {fileID: 1778617570}
     - target: {fileID: 2637136622062644533, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 50
@@ -1369,6 +1396,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4776851077977725491, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
   m_PrefabInstance: {fileID: 1778617569}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1778617571 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1876987075878699104, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
+  m_PrefabInstance: {fileID: 1778617569}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a6ab0c5cf98e5848beb39ea61abd0f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1787096774
 GameObject:
   m_ObjectHideFlags: 0
