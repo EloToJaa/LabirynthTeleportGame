@@ -236,6 +236,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PortalA
       objectReference: {fileID: 0}
+    - target: {fileID: 7555190221877600954, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: bebfe7660ba3dcf4bad86eeccc3662ac, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1386,6 +1390,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PortalB
       objectReference: {fileID: 0}
+    - target: {fileID: 7555190221877600954, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: 00f5314c05974a54e89268556cacac33, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
