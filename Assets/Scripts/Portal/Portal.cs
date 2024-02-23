@@ -5,7 +5,7 @@ public class Portal : MonoBehaviour
     public Portal otherPortal;
     public Material material;
 
-    public Transform portalCollider;
+    private Transform portalCollider;
     private Transform renderSurface;
     private Camera myCamera;
 

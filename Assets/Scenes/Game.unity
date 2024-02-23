@@ -185,6 +185,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1876987075878699104, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 2100000, guid: e87119bd87295454a9cead24a83261f9, type: 2}
+    - target: {fileID: 1876987075878699104, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
       propertyPath: otherPortal
       value: 
       objectReference: {fileID: 1778617571}
@@ -1338,6 +1342,10 @@ PrefabInstance:
       propertyPath: receiver
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1876987075878699104, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 2100000, guid: 422cc6d2cd970f14aaaa887b39d41deb, type: 2}
     - target: {fileID: 1876987075878699104, guid: e136c125312502e4c8417af9c4c66ff6, type: 3}
       propertyPath: otherPortal
       value: 
