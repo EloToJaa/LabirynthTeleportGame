@@ -26,6 +26,7 @@ public class Portal : MonoBehaviour
         portalTeleport.receiver = otherPortal.portalCollider;
 
         portalCamera = myCamera.GetComponent<PortalCamera>();
-
+        portalCamera.playerCamera = player.GetComponentInChildren<Camera>().transform;
+        
     }
 }
