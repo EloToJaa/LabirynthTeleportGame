@@ -23,7 +23,7 @@ public class Portal : MonoBehaviour
 
         portalTeleport = portalCollider.GetComponent<PortalTeleport>();
         portalTeleport.player = player.transform;
-        portalTeleport.receiver = otherPortal.portalCollider;
+        
 
         portalCamera = myCamera.GetComponent<PortalCamera>();
         portalCamera.playerCamera = player.GetComponentInChildren<Camera>().transform;
@@ -40,6 +40,7 @@ public class Portal : MonoBehaviour
 
     private void Start()
     {
+        portalTeleport.receiver = otherPortal.portalCollider;
         renderSurface.GetComponent<Renderer>().material.mainTexture = otherPortal.GetComponent<Portal>().myCamera.targetTexture;
     }
 }
