@@ -65,4 +65,12 @@ public class Lock : MonoBehaviour
             return false;
         }
     }
+
+    public void UseKey()
+    {
+        foreach (var door in doors)
+        {
+            door.Open();
+        }
+    }
 }
