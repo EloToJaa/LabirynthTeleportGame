@@ -24,4 +24,15 @@ public class LevelGenerator : MonoBehaviour
             }
         }
     }
+
+    public void GenerateLabirynth()
+    {
+        for(int x = 0; x < map.width; x++)
+        {
+            for(int z = 0; z < map.height; z++)
+            {
+                GenerateTile(x, z);
+            }
+        }
+    }
 }
