@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
+    public Material material1;
+    public Material material2;
+
     public Texture2D map;
     public ColorToPrefab[] colorMappings;
     public float offset = 5f;
@@ -33,6 +36,28 @@ public class LevelGenerator : MonoBehaviour
             {
                 GenerateTile(x, z);
             }
+        }
+
+
+    }
+
+    public void ColorTheChildren()
+    {
+        foreach(Transform child in transform)
+        {
+            if(child.tag == "Wall")
+            {
+                if(Random.Range(1, 100) % 3 == 0)
+                {
+                    child.gameObject.GetComponent<Renderer>().material = material1;
+                }
+                else
+                {
+                    child.gameObject.GetComponent<Renderer>().material = material2;
+                }
+            }
+
+            
         }
     }
 }
