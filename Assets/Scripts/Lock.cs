@@ -11,6 +11,7 @@ public class Lock : MonoBehaviour
     private void Start()
     {
         key = GetComponent<Animator>();
+        Debug.Log("Key: " + key.GetBool("useKey"));
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,6 +37,10 @@ public class Lock : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E) && canOpen && !locked)
         {
             key.SetBool("useKey", CheckTheKey());
+            if(key.GetBool("useKey"))
+            {
+                UseKey();
+            }
         }
     }
 
@@ -68,6 +73,7 @@ public class Lock : MonoBehaviour
 
     public void UseKey()
     {
+        Debug.Log("Using key");
         foreach (var door in doors)
         {
             door.Open();

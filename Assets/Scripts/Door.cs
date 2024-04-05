@@ -24,6 +24,7 @@ public class Door : MonoBehaviour
 
     public void Open()
     {
+        Debug.Log("Opening door");
         open = true;
     }
 
