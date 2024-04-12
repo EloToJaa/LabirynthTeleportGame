@@ -20,7 +20,9 @@ public class LevelGenerator : MonoBehaviour
 
         foreach (ColorToPrefab colorMapping in colorMappings)
         {
-            if (colorMapping.color.Equals(pixelColor))
+            if (pixelColor.r - 0.004 <= colorMapping.color.r && pixelColor.r + 0.004 >= colorMapping.color.r
+                && pixelColor.g - 0.004 <= colorMapping.color.g && pixelColor.g + 0.004 >= colorMapping.color.g
+                && pixelColor.b - 0.004 <= colorMapping.color.b && pixelColor.b + 0.004 >= colorMapping.color.b)
             {
                 Vector3 position = new Vector3(x * offset, 0, z * offset);
                 Instantiate(colorMapping.prefab, position, Quaternion.identity);
@@ -34,7 +36,7 @@ public class LevelGenerator : MonoBehaviour
         {
             for(int z = 0; z < map.height; z++)
             {
-                GenerateTile(x, z);
+                GenerateTile(x + 1, z + 1);
             }
         }
 
