@@ -25,7 +25,7 @@ public class LevelGenerator : MonoBehaviour
                 && pixelColor.b - 0.004 <= colorMapping.color.b && pixelColor.b + 0.004 >= colorMapping.color.b)
             {
                 Vector3 position = new Vector3(x * offset, 0, z * offset);
-                Instantiate(colorMapping.prefab, position, Quaternion.identity);
+                Instantiate(colorMapping.prefab, position, Quaternion.identity, transform);
             }
         }
     }
@@ -36,11 +36,11 @@ public class LevelGenerator : MonoBehaviour
         {
             for(int z = 0; z < map.height; z++)
             {
-                GenerateTile(x + 1, z + 1);
+                GenerateTile(x, z);
             }
         }
 
-
+        ColorTheChildren();
     }
 
     public void ColorTheChildren()
@@ -49,17 +49,18 @@ public class LevelGenerator : MonoBehaviour
         {
             if(child.tag == "Wall")
             {
-                if(Random.Range(1, 100) % 3 == 0)
+                foreach(Transform subChild in child)
                 {
-                    child.gameObject.GetComponent<Renderer>().material = material1;
-                }
-                else
-                {
-                    child.gameObject.GetComponent<Renderer>().material = material2;
+                    if(Random.Range(1, 100) % 3 == 0)
+                    {
+                        subChild.gameObject.GetComponent<Renderer>().material = material1;
+                    }
+                    else
+                    {
+                        subChild.gameObject.GetComponent<Renderer>().material = material2;
+                    }
                 }
             }
-
-            
         }
     }
 }

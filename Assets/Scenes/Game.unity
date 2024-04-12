@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef06cf7f64b0084449719a4762423f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material1: {fileID: 0}
-  material2: {fileID: 0}
+  material1: {fileID: 2100000, guid: 9f69e1abaea6b1444b47c9a04bda2506, type: 2}
+  material2: {fileID: 2100000, guid: 96c5adcdd2dbe8447b086f960fdfa854, type: 2}
   map: {fileID: 2800000, guid: 978eb2b2ab57afa4fb975766853f3378, type: 3}
   colorMappings:
   - color: {r: 1, g: 1, b: 1, a: 1}
@@ -178,7 +178,7 @@ MonoBehaviour:
   - color: {r: 0, g: 1, b: 0, a: 1}
     prefab: {fileID: 2641577247489642735, guid: ba412008d58ddd540b8f94603939a308, type: 3}
   - color: {r: 0, g: 0, b: 0, a: 1}
-    prefab: {fileID: 6135656142838034708, guid: b2592b609d8271d49a597cff2f4512f1, type: 3}
+    prefab: {fileID: 2268822149127377517, guid: 279989113f9c743448f4c0ae5d8dde88, type: 3}
   offset: 10
 --- !u!1 &1759264528
 GameObject:
