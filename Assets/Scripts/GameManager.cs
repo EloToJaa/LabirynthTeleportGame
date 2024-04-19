@@ -135,6 +135,17 @@ public class GameManager : MonoBehaviour
         {
             EndGame();
         }
+
+        if(timeToEnd <= 30 && !lessTime)
+        {
+            LessTimeOn();
+            lessTime = true;
+        }
+        else if (timeToEnd > 30 && lessTime)
+        {
+            LessTimeOff();
+            lessTime = false;
+        }
     }
 
     public void PauseGame()
