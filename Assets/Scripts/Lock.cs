@@ -4,6 +4,12 @@ public class Lock : MonoBehaviour
 {
     public Door[] doors;
     public KeyColor myColor;
+    public Renderer myLock;
+
+    public Material red;
+    public Material green;
+    public Material gold;
+
     private bool canOpen = false;
     private bool locked = false;
     private Animator key;
@@ -77,6 +83,22 @@ public class Lock : MonoBehaviour
         foreach (var door in doors)
         {
             door.Open();
+        }
+    }
+
+    private void SetMyColor()
+    {
+        switch (myColor)
+        {
+            case KeyColor.Red:
+                myLock.material = red;
+                break;
+            case KeyColor.Green:
+                myLock.material = green;
+                break;
+            case KeyColor.Gold:
+                myLock.material = gold;
+                break;
         }
     }
 }
