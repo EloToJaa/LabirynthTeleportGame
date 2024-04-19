@@ -27,4 +27,21 @@ public class MusicManager : MonoBehaviour
             audioSource.Play();
         }
     }
+
+    public void PitchThis(float pitch)
+    {
+        audioSource.pitch = pitch;
+    }
+
+    public void OnPauseGame()
+    {
+        pauseClipTime = audioSource.time;
+        audioSource.Pause();
+    }
+
+    public void OnResumeGame()
+    {
+        audioSource.PlayScheduled(pauseClipTime);
+        pauseClipTime = 0;
+    }
 }
