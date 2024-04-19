@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    public AudioClip[] audioClips { get; set; }
+    [SerializeField]
+    private AudioClip[] audioClips;
 
     [SerializeField]
     private int activeClipIndex = 0;
