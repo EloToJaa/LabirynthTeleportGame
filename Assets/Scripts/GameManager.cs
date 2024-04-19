@@ -91,10 +91,12 @@ public class GameManager : MonoBehaviour
         CancelInvoke(nameof(Stopper));
         if(gameWon)
         {
+            PlayClip(winClip);
             Debug.Log("You won!");
         }
         else
         {
+            PlayClip(loseClip);
             Debug.Log("You lost!");
         }
     }
@@ -118,6 +120,7 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
+        PlayClip(pauseClip);
         Debug.Log("Game Paused");
         Time.timeScale = 0;
         gamePaused = true;
@@ -125,6 +128,7 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        PlayClip(resumeClip);
         Debug.Log("Game Resumed");
         Time.timeScale = 1;
         gamePaused = false;
