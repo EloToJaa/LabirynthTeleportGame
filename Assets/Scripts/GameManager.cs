@@ -15,6 +15,49 @@ public class GameManager : MonoBehaviour
     public bool gameEnded { get; private set; }
     public bool gameWon { get; private set; }
 
+    [SerializeField]
+    private AudioClip resumeClip;
+
+    [SerializeField]
+    private AudioClip pauseClip;
+
+    [SerializeField]
+    private AudioClip winClip;
+
+    [SerializeField]
+    private AudioClip loseClip;
+
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
+    private void Start()
+    {
+        gameEnded = false;
+        gameWon = false;
+
+        if (timeToEnd <= 0)
+        {
+            timeToEnd = 180;
+        }
+
+        audioSource = GetComponent<AudioSource>();
+
+        InvokeRepeating(nameof(Stopper), 1, 1);
+    }
+
+    public void PlayClip(AudioClip playClip)
+    {
+        audioSource.clip = playClip;
+        audioSource.Play();
+    }
+
     public void AddKey(KeyColor keyColor)
     {
         keys[(int)keyColor]++;
@@ -36,26 +79,6 @@ public class GameManager : MonoBehaviour
     {
         CancelInvoke(nameof(Stopper));
         InvokeRepeating(nameof(Stopper), freezeFor, 1);
-    }
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-    }
-
-    private void Start()
-    {
-        gameEnded = false;
-        gameWon = false;
-
-        if (timeToEnd <= 0)
-        {
-            timeToEnd = 180;
-        }
-        InvokeRepeating(nameof(Stopper), 1, 1);
     }
 
     private void Update()
