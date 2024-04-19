@@ -29,6 +29,11 @@ public class GameManager : MonoBehaviour
 
     private AudioSource audioSource;
 
+    [SerializeField]
+    private MusicManager musicManager;
+
+    private bool lessTime = false;
+
     private void Awake()
     {
         if (instance == null)
@@ -50,6 +55,16 @@ public class GameManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         InvokeRepeating(nameof(Stopper), 1, 1);
+    }
+
+    private void LessTimeOn()
+    {
+        musicManager.PitchThis(1.5f);
+    }
+
+    private void LessTimeOff()
+    {
+        musicManager.PitchThis(1f);
     }
 
     public void PlayClip(AudioClip playClip)
