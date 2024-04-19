@@ -474,6 +474,10 @@ MonoBehaviour:
   doors:
   - {fileID: 7415549349303970656}
   myColor: 0
+  myLock: {fileID: 8466585327994415803}
+  red: {fileID: 2100000, guid: c3b0beccc71a3c343b2a70639643ef56, type: 2}
+  green: {fileID: 2100000, guid: b83b5abc1c04ab54181cdab99a406e4d, type: 2}
+  gold: {fileID: 2100000, guid: 458ef3b929e554745835909525ff7f55, type: 2}
 --- !u!4 &7563462913374594964 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ec22ec46cb853044c854b3526811c8b9, type: 3}

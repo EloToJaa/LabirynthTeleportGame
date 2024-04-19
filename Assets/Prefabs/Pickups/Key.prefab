@@ -119,4 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: {x: 0, y: 0, z: 0}
+  pickupClip: {fileID: 8300000, guid: 674164301a9ad2345adc93c006e87495, type: 3}
   keyColor: 0
+  red: {fileID: 2100000, guid: c3b0beccc71a3c343b2a70639643ef56, type: 2}
+  green: {fileID: 2100000, guid: b83b5abc1c04ab54181cdab99a406e4d, type: 2}
+  gold: {fileID: 2100000, guid: 458ef3b929e554745835909525ff7f55, type: 2}
