@@ -16,6 +16,7 @@ public class Lock : MonoBehaviour
 
     private void Start()
     {
+        SetMyColor();
         key = GetComponent<Animator>();
         Debug.Log("Key: " + key.GetBool("useKey"));
     }
