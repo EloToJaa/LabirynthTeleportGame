@@ -54,6 +54,10 @@ public class GameManager : MonoBehaviour
 
     public void PlayClip(AudioClip playClip)
     {
+        if(playClip == null)
+        {
+            return;
+        }
         audioSource.clip = playClip;
         audioSource.Play();
     }
