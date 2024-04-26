@@ -93,23 +93,36 @@ public class GameManager : MonoBehaviour
     public void AddKey(KeyColor keyColor)
     {
         keys[(int)keyColor]++;
-        Debug.Log($"Red: {keys[0]}, Green: {keys[1]}, Gold: {keys[2]}");
+        if(keyColor == KeyColor.Red)
+        {
+            redKeyText.text = keys[(int)keyColor].ToString();
+        }
+        else if(keyColor == KeyColor.Green)
+        {
+            greenKeyText.text = keys[(int)keyColor].ToString();
+        }
+        else if(keyColor == KeyColor.Gold)
+        {
+            goldKeyText.text = keys[(int)keyColor].ToString();
+        }
     }
 
     public void AddPoints(int pointsToAdd)
     {
         points += pointsToAdd;
-        Debug.Log($"Points: {points}");
+        pointsText.text = points.ToString();
     }
 
     public void AddTime(int timeToAdd)
     {
         timeToEnd += timeToAdd;
+        timeText.text = timeToEnd.ToString();
     }
 
     public void FreezeTime(int freezeFor)
     {
         CancelInvoke(nameof(Stopper));
+        snowflake.enabled = true;
         InvokeRepeating(nameof(Stopper), freezeFor, 1);
     }
 
@@ -124,19 +137,22 @@ public class GameManager : MonoBehaviour
         if(gameWon)
         {
             PlayClip(winClip);
-            Debug.Log("You won!");
+            pauseEnd.text = "You won!";
+            reloadInfo.text = "Press R to reload the game";
         }
         else
         {
             PlayClip(loseClip);
-            Debug.Log("You lost!");
+            pauseEnd.text = "You lost!";
+            reloadInfo.text = "Press R to reload the game";
         }
     }
 
     private void Stopper()
     {
         timeToEnd--;
-        Debug.Log($"Time: {timeToEnd} s");
+        timeText.text = timeToEnd.ToString();
+        snowflake.enabled = false;
 
         if (timeToEnd <= 0)
         {
@@ -164,7 +180,7 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         PlayClip(pauseClip);
-        Debug.Log("Game Paused");
+        infoPanel.SetActive(true);
         Time.timeScale = 0;
         gamePaused = true;
     }
@@ -172,7 +188,7 @@ public class GameManager : MonoBehaviour
     public void ResumeGame()
     {
         PlayClip(resumeClip);
-        Debug.Log("Game Resumed");
+        infoPanel.SetActive(false);
         Time.timeScale = 1;
         gamePaused = false;
     }
