@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,18 @@ public class GameManager : MonoBehaviour
     public bool gamePaused { get; private set; }
     public bool gameEnded { get; private set; }
     public bool gameWon { get; private set; }
+
+    public Text timeText;
+    public Text pointsText;
+    public Text redKeyText;
+    public Text greenKeyText;
+    public Text goldKeyText;
+    public Image snowflake;
+
+    public GameObject infoPanel;
+    public Text pauseEnd;
+    public Text reloadInfo;
+    public Text useInfo;
 
     [SerializeField]
     private AudioClip resumeClip;
