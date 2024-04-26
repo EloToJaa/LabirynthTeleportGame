@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
         infoPanel.SetActive(false);
         pauseEnd.text = "Pause";
         reloadInfo.text = "";
-        useInfo.text = "";
+        SetUseInfo("");
 
         LessTimeOff();
         audioSource = GetComponent<AudioSource>();
@@ -183,6 +183,11 @@ public class GameManager : MonoBehaviour
             LessTimeOff();
             lessTime = false;
         }
+    }
+
+    public void SetUseInfo(string info)
+    {
+        useInfo.text = info;
     }
 
     public void PauseGame()
