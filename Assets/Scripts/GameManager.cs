@@ -65,6 +65,14 @@ public class GameManager : MonoBehaviour
             timeToEnd = 180;
         }
 
+        snowflake.enabled = false;
+        timeText.text = timeToEnd.ToString();
+        infoPanel.SetActive(false);
+        pauseEnd.text = "Pause";
+        reloadInfo.text = "";
+        useInfo.text = "";
+
+        LessTimeOff();
         audioSource = GetComponent<AudioSource>();
 
         InvokeRepeating(nameof(Stopper), 1, 1);
