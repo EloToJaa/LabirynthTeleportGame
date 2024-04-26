@@ -26,7 +26,7 @@ public class Lock : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             canOpen = true;
-            Debug.Log("Can open");
+            GameManager.instance.SetUseInfo("Press E to open lock");
         }
     }
 
@@ -35,7 +35,7 @@ public class Lock : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             canOpen = false;
-            Debug.Log("Can't open");
+            GameManager.instance.SetUseInfo("");
         }
     }
 
@@ -56,18 +56,21 @@ public class Lock : MonoBehaviour
         if (GameManager.instance.keys[(int)KeyColor.Red] > 0 && myColor == KeyColor.Red)
         {
             GameManager.instance.keys[(int)KeyColor.Red]--;
+            GameManager.instance.redKeyText.text = GameManager.instance.keys[(int)KeyColor.Red].ToString();
             locked = true;
             return true;
         }
         else if (GameManager.instance.keys[(int)KeyColor.Green] > 0 && myColor == KeyColor.Green)
         {
             GameManager.instance.keys[(int)KeyColor.Green]--;
+            GameManager.instance.greenKeyText.text = GameManager.instance.keys[(int)KeyColor.Green].ToString();
             locked = true;
             return true;
         }
         else if (GameManager.instance.keys[(int)KeyColor.Gold] > 0 && myColor == KeyColor.Gold)
         {
             GameManager.instance.keys[(int)KeyColor.Gold]--;
+            GameManager.instance.goldKeyText.text = GameManager.instance.keys[(int)KeyColor.Gold].ToString();
             locked = true;
             return true;
         }
