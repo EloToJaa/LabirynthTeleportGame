@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -143,6 +144,19 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         PauseCheck();
+
+        if(gameEnded)
+        {
+            if(Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene("Game");
+            }
+
+            if(Input.GetKeyDown(KeyCode.N))
+            {
+                Application.Quit();
+            }
+        }
     }
 
     public void EndGame()
@@ -152,13 +166,13 @@ public class GameManager : MonoBehaviour
         {
             PlayClip(winClip);
             pauseEnd.text = "You won!";
-            reloadInfo.text = "Press R to reload the game";
+            reloadInfo.text = "Press R to reload the game\nPress N to quit";
         }
         else
         {
             PlayClip(loseClip);
             pauseEnd.text = "You lost!";
-            reloadInfo.text = "Press R to reload the game";
+            reloadInfo.text = "Press R to reload the game\nPress N to quit";
         }
     }
 
