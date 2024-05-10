@@ -11,9 +11,13 @@ public class MusicManager : MonoBehaviour
     private AudioSource audioSource;
     private double pauseClipTime = 0;
 
-    private void Start()
+    private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
         audioSource.clip = audioClips[activeClipIndex];
         audioSource.Play();
     }
