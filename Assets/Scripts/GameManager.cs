@@ -164,17 +164,20 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         CancelInvoke(nameof(Stopper));
-        if(gameWon)
+
+        infoPanel.SetActive(true);
+        reloadInfo.text = "Press R to reload the game\nPress N to quit";
+        Time.timeScale = 0;
+
+        if (gameWon)
         {
             PlayClip(winClip);
             pauseEnd.text = "You won!";
-            reloadInfo.text = "Press R to reload the game\nPress N to quit";
         }
         else
         {
             PlayClip(loseClip);
             pauseEnd.text = "You lost!";
-            reloadInfo.text = "Press R to reload the game\nPress N to quit";
         }
     }
 
