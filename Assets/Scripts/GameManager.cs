@@ -78,6 +78,12 @@ public class GameManager : MonoBehaviour
         InvokeRepeating(nameof(Stopper), 1, 1);
     }
 
+    public void WinGame()
+    {
+        gameWon = true;
+        gameEnded = true;
+    }
+
     private void LessTimeOn()
     {
         musicManager.PitchThis(1.5f);

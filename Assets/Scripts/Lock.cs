@@ -27,7 +27,9 @@ public class Lock : MonoBehaviour
         {
             canOpen = true;
             if(!locked)
+            {
                 GameManager.instance.SetUseInfo("Press E to open lock");
+            }
         }
     }
 
