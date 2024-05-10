@@ -168,6 +168,7 @@ public class GameManager : MonoBehaviour
         infoPanel.SetActive(true);
         reloadInfo.text = "Press R to reload the game\nPress N to quit";
         Time.timeScale = 0;
+        musicManager.OnPauseGame();
 
         if (gameWon)
         {
