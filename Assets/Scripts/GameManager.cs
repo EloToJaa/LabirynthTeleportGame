@@ -76,6 +76,8 @@ public class GameManager : MonoBehaviour
         LessTimeOff();
         audioSource = GetComponent<AudioSource>();
 
+        Time.timeScale = 1;
+
         InvokeRepeating(nameof(Stopper), 1, 1);
     }
 
